@@ -108,8 +108,12 @@
             (log.append lines)))
         {:batch? true}))))
 
-(fn M.stop []
-  (log.append ["Stopping jshell"]))
+(fn stop []
+  (let [repl (state :repl)]
+    (when repl
+      (repl.destroy)
+      (display-repl-status :stopped)
+      (a.assoc (state) :repl nil))))
 
 (fn M.on-exit []
   (M.stop))
