@@ -96,11 +96,17 @@
            (fn [msg]
              (log.append (format-message msg)))})))))
 
+(fn prep-code [s]
+  (if (string.find s "\n")
+    (.. s "")
+    (.. s "\n")
+    ))
+
 (fn M.eval-str [opts]
   (with-repl-or-warn
     (fn [repl]
       (repl.send
-        opts.code
+        (prep-code opts.code)
         (fn [msgs]
           (let [lines (-> msgs unbatch format-message)]
             (when opts.on-result
