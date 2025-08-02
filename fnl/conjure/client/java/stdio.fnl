@@ -95,6 +95,10 @@
            (fn [msg]
              (log.append (format-message msg)))})))))
 
+;; Probably need to parse with tree-sitter
+;; if call a non static method, then we need to add static keyword
+;; also need to get methods in call order and evaluate those first
+;; Need to run all the import statements too
 (fn prep-code [s]
   (if (string.find s "\n")
     (.. s "")
