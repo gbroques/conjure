@@ -48,7 +48,6 @@ local function display_repl_status(status)
   return log.append({(M["comment-prefix"] .. cfg({"command"}) .. " (" .. (status or "no status") .. ")")}, {["break?"] = true})
 end
 M.start = function()
-  log.append({(M["comment-prefix"] .. "Starting Java client...")})
   if state("repl") then
     return log.append({(M["comment-prefix"] .. "Can't start, REPL is already running."), (M["comment-prefix"] .. "Stop the REPL with " .. config["get-in"]({"mapping", "prefix"}) .. cfg({"mapping", "stop"}))}, {["break?"] = true})
   else

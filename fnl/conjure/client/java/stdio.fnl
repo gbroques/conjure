@@ -58,7 +58,6 @@
     {:break? true}))
 
 (fn M.start []
-  (log.append [(.. M.comment-prefix "Starting Java client...")])
   (if (state :repl)
     (log.append [(.. M.comment-prefix "Can't start, REPL is already running.")
                  (.. M.comment-prefix "Stop the REPL with "
