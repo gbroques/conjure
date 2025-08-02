@@ -1,12 +1,12 @@
 (local {: autoload : define} (require :conjure.nfnl.module))
 (local a (autoload :conjure.aniseed.core))
-(local config (autoload :conjure.config))
-(local str (autoload :conjure.aniseed.string))
-(local mapping (autoload :conjure.mapping))
-(local log (autoload :conjure.log))
 (local client (autoload :conjure.client))
-(local ts (autoload :conjure.tree-sitter))
+(local config (autoload :conjure.config))
+(local log (autoload :conjure.log))
+(local mapping (autoload :conjure.mapping))
 (local stdio (autoload :conjure.remote.stdio))
+(local str (autoload :conjure.aniseed.string))
+(local ts (autoload :conjure.tree-sitter))
 
 (local M (define :conjure.client.java.stdio))
 
