@@ -54,7 +54,7 @@
    :path_subs nil
    :client_on_load true
 
-   :filetypes [:clojure :fennel :janet :hy :julia :racket :scheme :lua :lisp :python :rust :sql :php :r]
+   :filetypes [:clojure :fennel :janet :hy :julia :racket :scheme :lua :lisp :python :rust :sql :php :r :java]
    :filetype {:clojure :conjure.client.clojure.nrepl
               :fennel :conjure.client.fennel.nfnl
               :janet :conjure.client.janet.netrepl
@@ -68,7 +68,8 @@
               :r :conjure.client.r.stdio
               :rust :conjure.client.rust.evcxr
               :sql :conjure.client.sql.stdio
-              :php :conjure.client.php.psysh}
+              :php :conjure.client.php.psysh
+              :java :conjure.client.java.stdio}
    :filetype_suffixes {:racket [:rkt]
                        :scheme [:scm :ss]}
 
